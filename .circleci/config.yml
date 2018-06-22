@@ -43,7 +43,6 @@ workflows:
       - deploy: # run for only tagged (master)
           requires:
             - build
-          context: usds-forms
           filters:
             tags:
               only: /^v.*/
