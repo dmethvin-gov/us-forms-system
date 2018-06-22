@@ -30,13 +30,16 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_FORMS_TOKEN" > ~/repo/.npmrc
-      - run: npm pack # publish
+      - run: npm publish
 
 workflows:
   version: 2
   build-deploy:
     jobs:
       - build:  # run for all branches and PRs
+          filters:
+            tags:
+              only: /^.*/
       - deploy: # run for only tagged (master)
           requires:
             - build
