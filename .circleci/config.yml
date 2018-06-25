@@ -39,7 +39,7 @@ workflows:
       - build:   # run for all branches and PRs
           filters:
             tags:
-              only: /v.*/
+              only: /^v.*/
       - deploy: # run for only tagged (master)
           requires:
             - build
