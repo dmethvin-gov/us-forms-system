@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
 import Scroll from 'react-scroll';
 import _ from 'lodash/fp';
 import classNames from 'classnames';
@@ -164,6 +163,6 @@ FormPage.propTypes = {
   setData: PropTypes.func
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(FormPage));
+export default connect(mapStateToProps, mapDispatchToProps)(FormPage);
 
 export { FormPage };

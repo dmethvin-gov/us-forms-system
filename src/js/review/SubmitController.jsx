@@ -2,7 +2,6 @@ import React from 'react';
 import Raven from 'raven-js';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
 
 import SubmitButtons from './SubmitButtons';
 import PrivacyAgreement from '../components/PrivacyAgreement';
@@ -153,7 +152,7 @@ SubmitController.propTypes = {
   trackingPrefix: PropTypes.string.isRequired
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SubmitController));
+export default connect(mapStateToProps, mapDispatchToProps)(SubmitController);
 
 // for tests
 export { SubmitController };
